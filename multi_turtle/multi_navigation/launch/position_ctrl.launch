@@ -1,0 +1,15 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="tb3_name" default="tb3_0"/>
+
+  <group ns = "$(arg tb3_name)">
+    <!-- goal broadcaster -->
+    <node pkg="multi_navigation" name="goal_broadcaster" type="goal_broadcaster.py" output="screen">
+    </node>
+
+    <!-- move_to_goal -->
+    <node pkg="multi_navigation" name="move_to_goal" type="move_to_goal.py">
+    </node>
+
+  </group>
+</launch>
